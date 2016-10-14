@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load custom_markdown %}
+
+{% block content %}
+{% load staticfiles %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>徐飞个人博客网站</title>
+<meta name="keywords" content="个人博客,徐飞个人博客" />
+<meta name="description" content="徐飞个人博客。" />
+<link href="{% static 'css/base.css'%}" rel="stylesheet">
+<link href="{% static 'css/about.css'%}" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="static/js/modernizr.js"></script>
+<![endif]-->
+<link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+  <div id="logo"><a href="/"></a></div>
+  <nav class="topnav" id="topnav"><a href="{% url 'home' %}"><span>首页</span><span class="en">Protal</span></a><a href="{% url 'about_me' %}"><span>关于我</span><span class="en">About</span></a>{% for categorys in category_list %}<a href="{% url 'article' %}?cid={{ categorys.id }}"><span>{{ categorys.name }}</span><span class="en">{{ categorys.engname }}{% endfor %}</span></a></nav>
+
+</header>
+<article class="aboutcon">
+<h1 class="t_nav"><span>像“草根”一样，紧贴着地面，低调的存在，冬去春来，枯荣无恙。</span><a href="{% url 'home' %}" class="n1">网站首页</a><a href="{% url 'about_me' %}" class="n2">关于我</a></h1>
+<div class="about left">
+  <h2>Just about me</h2>
+    <ul>
+     <p>徐飞，男，一个纯正的90后屌丝站长！16年入行，从业已经有接近1年。</p>
+<p>
+    <p>1、迷恋技术，保持对代码的热情
+
+兴趣是最好的老师，如果不是最初对编程充满兴趣，应该很少有人会选择程序员这个行业，但同时程序员是一个有点乏味枯燥的工作。如果你不迷恋技术，对代码充满热情，那你只能做一个平淡的程序员。
+</p>
+<p>2、在实践中成长，磨砺技术
+
+程序员是一个在实践中成长的职业。你看再多书，听再多的视频课，自以为学到很多东西，但正在接触项目的时候，就两手发软，头脑空白了。最好的提方法，是正在参与到项目中去，最好是能参与从设计到开发到测试到维护一整套的整套流程。
+
+做到这些，你也能成为一名优秀的程序员
+</p>
+<p>3、加班虽苦但也是提高的过程
+
+虎虎在之前的文章中说过：毕业之后的前三年最为重要，要认认真真钻研技术，积累经验，至少能在某一方面成为技术达人。程序员加班是很正常的事情，要加班工作，加班学习，同时在这段时间要注意多总结，注意工作方法，合理安排时间，提高工作效率。你现在的付出是为了以后的成功！
+</p>
+<p>4、不怕失败，学会寻找成就感
+
+新程序员由于技术水平、经验的欠缺，写出的程序bug多，执行效率低，可能被同事嘲笑（我发现这还是普遍现象），然后被上司责怪，内心充满有挫折感。要学会自我减压，相信挫折与失败只是暂时的，发奋图强。在工作中要学会寻找成就感，哪怕你只是完成一个小功能，优化了一段代码，都是你辛勤付出的结果，是你能力提高的体现。
+</p>
+<p>5、要学会写文档
+
+不要以为程序员只要负责写代码，如果是那样，你永远不能有上升的空间了。因为不管是走技术路线，还是管理路线，都离不开文档，方案文档，技术文档，产品介绍文档，管理文档等等，是你了解开发流程，产品运营的必由之路。
+</p>
+<p>6、学会复制粘贴
+
+现在的开发资料已经非常的充实，遇到难以解决的问题不要过分纠结，为难自己，请打开搜索引擎搜索一下。毕竟，你做的是工作，不是在学校做研究。
+</p>
+<p>7、细节决定成败
+
+不少程序员都有这样的习惯，好不容易思考出解决问题的方法，迫不及待的把代码写出来，功能也实现了，立马提交代码完事。殊不知你的代码中还有不少细节需要完善，大到内存泄露、资源释放、代码是否高效，小到注释是否规范，都是你必须关注的问题。且不谈这些细节问题对你做出来的项目的影响，就是对你编程习惯的影响也是深远的。
+</p>
+</p>
+
+    </ul>
+    <h2>About my blog</h2>
+    <p>域  名：暂无等待注册 <a href="/" class="blog_link" target="_blank">注册域名</a></p>
+    <p>备案号：蜀ICP备shuiaixiaofei号-1</p>
+    <p>程  序：Python Django 1.7.1</p>
+</div>
+<aside class="right">
+    <div class="about_c">
+    <p>网名：<span>XuFei</span> | 徐小帅</p>
+    <p>姓名：徐飞 </p>
+    <p>生日：9,30</p>
+    <p>籍贯：辽宁葫芦岛</p>
+    <p>现居：北京市海淀区</p>
+    <p>职业：屌丝程序员一个</p>
+    <p>喜欢的书：没有书</p>
+    <p>喜欢的音乐：《burning》《just one last dance》《相思引》</p>
+<a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=d4d4a26952d46d564ee5bf7782743a70d5a8c405f4f9a33a60b0eec380743c64">
+<img src="http://pub.idqqimg.com/wpa/images/group.png" alt="个人博客网站" title="徐飞个人博客网站"></a>
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&amp;email=HHh9cn95b3F1cHVye1xtbTJ-c3E" ><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_22.png" alt="徐飞个人博客网站"></a>
+</div>
+</aside>
+</article>
+<footer>
+  <p>Design by DanceSmile <a href="http://www.miitbeian.gov.cn/" target="_blank">蜀ICP备shuaixiaofei号-1</a> <a href="/">网站统计</a></p>
+</footer>
+<script src="{% static 'js/silder.js' %}"></script>
+</body>
+</html>
+{% endblock %}
