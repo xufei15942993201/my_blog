@@ -22,5 +22,6 @@ class Migration(migrations.Migration):
             options={
                 'ordering': ['-date_time'],
             },
+            bases=(models.Model,),
         ),
     ]
